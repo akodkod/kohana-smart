@@ -44,6 +44,7 @@ class Kohana_Smart {
 	protected static function capture($kohana_smart_filename, array $kohana_smart_data)
 	{
 		$render = new Smarty();
+		$render->setCompileDir(APPPATH.'cache'.DIRECTORY_SEPARATOR.'templates_c');
 		$render->assign($kohana_smart_data);
 
 		// Capture the smart output
