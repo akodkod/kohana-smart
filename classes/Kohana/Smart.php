@@ -43,7 +43,10 @@ class Kohana_Smart {
 	 */
 	protected static function capture($kohana_smart_filename, array $kohana_smart_data)
 	{
+		$compile_dir_path = Kohana::$config->load('smart.compile_dir_path');
+
 		$render = new Smarty();
+		$render->setCompileDir($compile_dir_path);
 		$render->assign($kohana_smart_data);
 
 		// Capture the smart output
